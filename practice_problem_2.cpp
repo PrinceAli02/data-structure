@@ -99,6 +99,52 @@ void printDeck(list<Card> p) {
     }
 }
 
+bool isThereWinner(list<Card> p1, list<Card> p2, list<Card> p3, list<Card> p4) {
+    if(p1.size() == 0 || p2.size() == 0 || p3.size() == 0 || p4.size() == 0) {
+        int m = 0;
+        vector<string> winners;
+        if(p1.size() == m) {
+            winners.push_back(", Player1");
+        }
+        if(p1.size() > m) {
+            m = p1.size();
+            winners.clear();
+            winners.push_back("Player1");
+        }
+        if(p2.size() == m) {
+            winners.push_back(", Player2");
+        }
+        if(p2.size() > m) {
+            m = p2.size();
+            winners.clear();
+            winners.push_back("Player2");
+        }
+        if(p3.size() == m) {
+            winners.push_back(", Player3");
+        }
+        if(p3.size() > m) {
+            m = p3.size();
+            winners.clear();
+            winners.push_back("Player3");
+        }
+        if(p4.size() == m) {
+            winners.push_back(", Player4");
+        }
+        if(p4.size() > m) {
+            m = p4.size();
+            winners.clear();
+            winners.push_back("Player4");
+        }
+
+        for(auto x : winners) cout << x;
+        cout << " is/are the winner(s) of the game." << endl;
+
+        return true;
+    }
+    return false;
+}
+
+
 int main() {
     list<Card> player1, player2, player3, player4;
 
